@@ -14,7 +14,7 @@ public class TestAdapter extends RecyclerView.Adapter<TestHolder>{
     private List<String> lista;
     private RemoveItem removeItemListener;
 
-    public TestAdapter(List<String> lista, RemoveItem removeItemListener) {
+    TestAdapter(List<String> lista, RemoveItem removeItemListener) {
         this.lista = lista;
         this.removeItemListener = removeItemListener;
     }
@@ -37,19 +37,9 @@ public class TestAdapter extends RecyclerView.Adapter<TestHolder>{
         return lista != null ? lista.size() : 0;
     }
 
-    public void removeItem(int position){
-        lista.remove(position);
-        notifyItemRemoved(position);
-        notifyItemRangeChanged(position, getItemCount());
-    }
-
-    public void loadList(List<String> list){
+    void loadList(List<String> list){
         this.lista = list;
         notifyDataSetChanged();
-    }
-
-    public List<String> getLista(){
-        return lista;
     }
 
 }

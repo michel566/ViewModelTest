@@ -28,15 +28,11 @@ public class TestViewModel extends ViewModel {
         results.setValue(this.values);
     }
 
-    public void setValues(List<String> values) {
-        this.values = values;
-    }
-
-    public void addValue(String value) {
+    void addValue(String value) {
         this.values.add(value);
     }
 
-    public void removeValue(int index) {
+    void removeValue(int index) {
         this.values.remove(index);
     }
 

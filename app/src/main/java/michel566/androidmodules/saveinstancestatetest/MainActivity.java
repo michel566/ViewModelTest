@@ -36,23 +36,13 @@ public class MainActivity extends AppCompatActivity {
 
         listenerSetup();
         observerSetup();
-
         recyclerViewSetup();
-
-
     }
 
     private void listenerSetup() {
         sendButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                String valorDigitado = editText.getText().toString();
-               /* if (!valorDigitado.equals("")) {
-                    testList.add(valorDigitado);
-                }
-                adapter.notifyDataSetChanged();
-
-                */
+            public void onClick(View v) { String valorDigitado = editText.getText().toString();
                testViewModel.addValue(valorDigitado);
                editText.setText("");
                adapter.notifyDataSetChanged();
@@ -62,12 +52,6 @@ public class MainActivity extends AppCompatActivity {
         removeItemListener = new RemoveItem() {
             @Override
             public void onClick(View view, int adapterPosition) {
-              /*  if (adapter.getItemCount() > 0) {
-                    adapter.removeItem(adapterPosition);
-                }
-
-               */
-
               testViewModel.removeValue(adapterPosition);
               adapter.notifyDataSetChanged();
             }
